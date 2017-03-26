@@ -5,7 +5,7 @@
  *
  * @type {angular.Module}
  */
-angular.module('todomvc', ['ngRoute', 'ngResource'])
+var appModule = angular.module('todomvc', ['ngRoute', 'ngResource'])
 	.config(function ($routeProvider) {
 		'use strict';
 
@@ -30,3 +30,8 @@ angular.module('todomvc', ['ngRoute', 'ngResource'])
 				redirectTo: '/'
 			});
 	});
+
+appModule.config(['$locationProvider', function($locationProvider) {
+  $locationProvider.hashPrefix('');
+}]);
+
